@@ -1,0 +1,31 @@
+KV = """
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+Screen:
+    canvas:
+        Color:
+            rgba: get_color_from_hex("#771088")
+        Rectangle:
+            pos: self.pos
+            size: self.size
+"""
+Builder.load_string("""
+<StartScreen>:
+    GridLayout:
+        cols: 1
+        BoxLayout:
+            orientation: 'vertical'
+            Image:
+                source: 'пандора.png'
+                size_hint: (0.65, None)
+
+        BoxLayout:
+            Label:
+                text: 'Пандора'
+                font_size: 48
+                font_name: 'Lora-Bold'
+        BoxLayout:
+            Label:
+                text: 'Танцевальный дом'
+                font_size: 24
+                font_name: 'Lora'
+""")
